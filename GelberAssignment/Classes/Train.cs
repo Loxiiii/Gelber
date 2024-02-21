@@ -36,31 +36,33 @@ namespace GelberAssignment.Classes
             {
                 if ((t - this.TimeOfCreation) % rw.TimeToTravel == 0)
                 {
-                    // Change currentPosition based on direction of movement
-                    if (this.Direction == "Right")
+                    // Calculate the change in position based on the direction of movement
+                    int positionChange = this.Direction == "Right" ? 1 : -1;
+
+                    // Update the current position of the train
+                    this.CurrentPosition += positionChange;
+
+                    // Update the current position of each passenger
+                    foreach (Passenger passenger in this.Passengers)
                     {
-                        this.CurrentPosition++;
-                        this.Traveling = false;
-                        foreach (Passenger passenger in this.Passengers)
-                        {
-                            passenger.CurrentPosition++;
-                            passenger.Traveling = false;
-                        }
+                        passenger.CurrentPosition += positionChange;
                     }
-                    else
+
+                    // Set traveling state to false
+                    this.Traveling = false;
+
+                    // Set traveling state of passengers to false
+                    foreach (Passenger passenger in this.Passengers)
                     {
-                        this.CurrentPosition--;
-                        this.Traveling = false;
-                        foreach (Passenger passenger in this.Passengers)
-                        {
-                            passenger.CurrentPosition--;
-                            passenger.Traveling = false;
-                        }
+                        passenger.Traveling = false;
                     }
                 }
                 else
                 {
+                    // Set traveling state to true
                     this.Traveling = true;
+
+                    // Set traveling state of passengers to true
                     foreach (Passenger passenger in this.Passengers)
                     {
                         passenger.Traveling = true;
@@ -72,6 +74,7 @@ namespace GelberAssignment.Classes
                 Console.WriteLine("An error occurred while moving train and passengers: " + ex.Message);
             }
         }
+
 
         public void UnboardPassengers(ref Railway rw, ref int numPassengers)
         {
