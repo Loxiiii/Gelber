@@ -19,19 +19,19 @@ public class Program
         // Read the file
         string content = reader.getContent(example);
 
-        // Error handling: return 0 if input error
-        if (content.Contains('0'))
-        {
-            Console.WriteLine("Wrong input, please fix the .txt file to " +
-                "include correct data");
-            return 0;
-        }
-
         // Split the file in lines
         string[][] elements = ParseFile(content);
 
         // Create Railway
         Railway rw = CreateRailway(elements);
+        if (rw.NumberOfStations <= 0 || rw.TimeToTravel <= 0 ||
+            rw.FrequencyDepart <= 0 || rw.CapacityOfTrains <= 0)
+        {
+            Console.WriteLine("Wrong railway input, please fix the " +
+                "first line in the .txt file to " +
+                 "include correct data");
+            return 0;
+        }
 
         // Create Passenger List
         List<Passenger> passengers = CreatePassengerList(elements);            
