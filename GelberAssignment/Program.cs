@@ -65,7 +65,7 @@ internal class Program
             }
 
             // Remove trains
-            rw.removeTrains();
+            rw.RemoveTrains();
 
             // Spawn trains
             if (t != 0 && t % rw.FrequencyDepart == 0)

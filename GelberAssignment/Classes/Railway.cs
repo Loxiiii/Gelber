@@ -22,7 +22,7 @@ namespace GelberAssignment.Classes
             PassengersInRailway = new List<Passenger>();
         }
 
-        public void removeTrains()
+        public void RemoveTrains()
         {
             try
             {

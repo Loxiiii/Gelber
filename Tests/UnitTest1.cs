@@ -21,7 +21,7 @@ public class RailwayTests
             };
 
         // Act
-        railway.removeTrains();
+        railway.RemoveTrains();
 
 
         // Assert
