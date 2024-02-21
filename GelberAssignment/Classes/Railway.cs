@@ -5,10 +5,63 @@ namespace GelberAssignment.Classes
 {
     public class Railway
     {
-        public int NumberOfStations { get; set; }
-        public int TimeToTravel { get; set; }
-        public int FrequencyDepart { get; set; }
-        public int CapacityOfTrains { get; set; }
+        private int numberOfStations;
+        private int timeToTravel;
+        private int frequencyDepart;
+        private int capacityOfTrains;
+
+        public int NumberOfStations
+        {
+            get { return numberOfStations; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Number of stations must be greater than 0.");
+                }
+                numberOfStations = value;
+            }
+        }
+
+        public int TimeToTravel
+        {
+            get { return timeToTravel; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Time to travel must be greater than 0.");
+                }
+                timeToTravel = value;
+            }
+        }
+
+        public int FrequencyDepart
+        {
+            get { return frequencyDepart; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Frequency of departure must be greater than 0.");
+                }
+                frequencyDepart = value;
+            }
+        }
+
+        public int CapacityOfTrains
+        {
+            get { return capacityOfTrains; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Capacity of trains must be greater than 0.");
+                }
+                capacityOfTrains = value;
+            }
+        }
+
         public List<Train> Trains { get; set; }
         public List<Passenger> PassengersInRailway { get; set; }
 
