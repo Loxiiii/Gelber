@@ -14,7 +14,7 @@ public class Program
         Console.WriteLine("You chose: {0}", example);
 
         // Initialize the reader
-        Reader reader = new Reader();
+        ReadFile reader = new ReadFile();
 
         // Read the file
         string content = reader.getContent(example);

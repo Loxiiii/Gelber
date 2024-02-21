@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Helpers
 {
-    public class Reader
+    public class ReadFile
     {
         public string getContent(string fileName)
         {
