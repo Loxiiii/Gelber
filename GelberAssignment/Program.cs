@@ -3,11 +3,11 @@ using Helpers;
 using System.Linq;
 using GelberAssignment.Classes;
 
+namespace GelberAssignment;
 
-
-internal class Program
+public class Program
 {
-    private static int Main(string[] args)
+    public static int Main(string[] args)
     {
         Console.WriteLine("What example do you want to read?");
         string example = Console.ReadLine();
@@ -18,6 +18,14 @@ internal class Program
 
         // Read the file
         string content = reader.getContent(example);
+
+        // Error handling: return 0 if input error
+        if (content.Contains('0'))
+        {
+            Console.WriteLine("Wrong input, please fix the .txt file to " +
+                "include correct data");
+            return 0;
+        }
 
         // Split the file in lines
         string[][] elements = ParseFile(content);
@@ -170,7 +178,7 @@ internal class Program
                     );
     }
 
-    private static string[][] ParseFile(string content)
+    public static string[][] ParseFile(string content)
     {
         string[] lines = content.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
         // Split each line in elements
