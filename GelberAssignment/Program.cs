@@ -51,6 +51,9 @@ public class Program
         createTrain(1, 0, ref rw);
         createTrain(rw.NumberOfStations, 0, ref rw);
 
+        // Create initial passengers
+        CreatePassengersAtTimeT(passengers, t, ref rw);
+
         // Initialize passengersToUnboardList
         List<Passenger> passengersToUnboard = new List<Passenger>();
         List<Guid> guidsToUnboard = new List<Guid>();
