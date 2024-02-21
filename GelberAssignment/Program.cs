@@ -48,8 +48,8 @@ public class Program
 
         // Initialize what happens at t = 0
         // Create initial trains
-        createTrain(1, 0, ref rw);
-        createTrain(rw.NumberOfStations, 0, ref rw);
+        CreateTrain(1, 0, ref rw);
+        CreateTrain(rw.NumberOfStations, 0, ref rw);
 
         // Create initial passengers
         CreatePassengersAtTimeT(passengers, t, ref rw);
@@ -82,8 +82,8 @@ public class Program
             // Spawn trains
             if (t != 0 && t % rw.FrequencyDepart == 0)
             {
-                createTrain(1, 0, ref rw);
-                createTrain(rw.NumberOfStations, 0, ref rw);
+                CreateTrain(1, 0, ref rw);
+                CreateTrain(rw.NumberOfStations, 0, ref rw);
             }
             // Spawn passengers
             CreatePassengersAtTimeT(passengers, t, ref rw);// create passengers at t
@@ -116,7 +116,7 @@ public class Program
         return t;
     }
 
-    private static void createTrain(int stationNumber,int timeOfCreation, ref Railway railway)
+    private static void CreateTrain(int stationNumber,int timeOfCreation, ref Railway railway)
     {
         Train newTrain = new Train(stationNumber, timeOfCreation, railway.NumberOfStations);
         railway.Trains.Add(newTrain);
