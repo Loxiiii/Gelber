@@ -9,14 +9,11 @@ namespace Helpers
         {
             // Get the current working directory
             string currentDirectory = Directory.GetCurrentDirectory();
-
-            // Navigate to the parent directory
-            string parentDirectory = Directory.GetParent(currentDirectory).FullName;
-            string dir = Directory.GetParent(parentDirectory).FullName;
-            string d = Directory.GetParent(dir).FullName;
-
+            Console.WriteLine("The current directory is {0}", currentDirectory);
+            string navigateBack = "../../../";
+        
             // Construct the file path relative to the parent directory
-            string filePath = Path.Combine(d, "Examples", fileName + ".txt");
+            string filePath = Path.Combine(currentDirectory, navigateBack, "Examples", fileName + ".txt");
 
             try
             {
