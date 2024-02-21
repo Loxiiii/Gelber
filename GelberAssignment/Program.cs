@@ -36,8 +36,17 @@ public class Program
         // Create Passenger List
         List<Passenger> passengers = CreatePassengerList(elements);            
 
-        // Print the number of existing passengers
-        VerifyRead(rw, passengers);
+        // Print the number of existing passengers and check input information
+        bool passengerInfoIsCorrect = VerifyRead(rw, passengers);
+
+        // If error in passenger input, return 0
+        if (passengerInfoIsCorrect == false)
+        {
+            Console.WriteLine("Wrong passenger input, please fix the " +
+                "passengers information in the .txt file to " +
+                 "include correct data");
+            return 0;
+        }
 
         // Initialize t
         int t = 0;
@@ -133,7 +142,7 @@ public class Program
         }
     }
 
-    private static void VerifyRead(Railway rw, List<Passenger> passengers)
+    private static bool VerifyRead(Railway rw, List<Passenger> passengers)
     {
         Console.WriteLine();
         Console.WriteLine("The railway has {0} stops, it takes {1} minutes to travel from one" +
@@ -148,7 +157,16 @@ public class Program
                 " station {3}, and origin station {4}", i+1, passengers[i].TypeOfPassenger,
                 passengers[i].TimeArrives, passengers[i].Destination, passengers[i].Origin);
 
+            if ((passengers[i].TypeOfPassenger != "A" && passengers[i].TypeOfPassenger != "B") ||
+                passengers[i].TimeArrives < 0 || passengers[i].Destination < 1 ||
+                passengers[i].Destination > rw.NumberOfStations ||
+                passengers[i].Origin < 1 ||
+                passengers[i].Origin > rw.NumberOfStations)
+            {
+                return false;
+            }
         }
+        return true;
     }
 
     private static List<Passenger> CreatePassengerList(string[][] elements)
