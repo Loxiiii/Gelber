@@ -5,7 +5,7 @@ namespace Helpers
 {
     public class ReadFile
     {
-        public string getContent(string fileName)
+        public string GetContent(string fileName)
         {
             // Get the directory where the executable is located
             string executableDirectory = AppDomain.CurrentDomain.BaseDirectory;

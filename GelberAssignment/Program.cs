@@ -17,7 +17,7 @@ public class Program
         ReadFile reader = new ReadFile();
 
         // Read the file
-        string content = reader.getContent(example);
+        string content = reader.GetContent(example);
 
         // Split the file in lines
         string[][] elements = ParseFile(content);
