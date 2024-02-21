@@ -9,15 +9,18 @@ public class Program
 {
     public static int Main(string[] args)
     {
-        Console.WriteLine("What example do you want to read?");
-        string example = Console.ReadLine();
-        Console.WriteLine("You chose: {0}", example);
-
+        // Check if command-line arguments are provided
+        if (args.Length == 0)
+        {
+            Console.WriteLine("Please provide the file name as a command-line argument.");
+            return -1;
+        }
+        string fileName = args[0];
         // Initialize the reader
         ReadFile reader = new ReadFile();
 
         // Read the file
-        string content = reader.GetContent(example);
+        string content = reader.GetContent(fileName);
 
         // Split the file in lines
         string[][] elements = ParseFile(content);
