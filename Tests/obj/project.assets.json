@@ -2324,11 +2324,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/javiercampos/Projects/GelberAssignment/Tests/Tests.csproj",
+      "projectUniqueName": "/Users/javiercampos/Desktop/Projects/Gelber/Gelber/Tests/Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "/Users/javiercampos/Projects/GelberAssignment/Tests/Tests.csproj",
+      "projectPath": "/Users/javiercampos/Desktop/Projects/Gelber/Gelber/Tests/Tests.csproj",
       "packagesPath": "/Users/javiercampos/.nuget/packages/",
-      "outputPath": "/Users/javiercampos/Projects/GelberAssignment/Tests/obj/",
+      "outputPath": "/Users/javiercampos/Desktop/Projects/Gelber/Gelber/Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/javiercampos/.nuget/NuGet/NuGet.Config"
@@ -2343,8 +2343,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/javiercampos/Projects/GelberAssignment/GelberAssignment/GelberAssignment.csproj": {
-              "projectPath": "/Users/javiercampos/Projects/GelberAssignment/GelberAssignment/GelberAssignment.csproj"
+            "/Users/javiercampos/Desktop/Projects/Gelber/Gelber/GelberAssignment/GelberAssignment.csproj": {
+              "projectPath": "/Users/javiercampos/Desktop/Projects/Gelber/Gelber/GelberAssignment/GelberAssignment.csproj"
             }
           }
         }
