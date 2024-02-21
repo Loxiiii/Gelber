@@ -24,14 +24,6 @@ public class Program
 
         // Create Railway
         Railway rw = CreateRailway(elements);
-        if (rw.NumberOfStations <= 0 || rw.TimeToTravel <= 0 ||
-            rw.FrequencyDepart <= 0 || rw.CapacityOfTrains <= 0)
-        {
-            Console.WriteLine("Wrong railway input, please fix the " +
-                "first line in the .txt file to " +
-                 "include correct data");
-            return 0;
-        }
 
         // Create Passenger List
         List<Passenger> passengers = CreatePassengerList(elements);            
