@@ -5,17 +5,24 @@ namespace GelberAssignment.Classes
     public class Passenger
     {
         public Guid Id { get; private set; }
-        private string typeOfPassenger;
+        private string? typeOfPassenger;
         private int timeArrives;
         private int destination;
         private int origin;
         private int currentPosition;
-        private bool boarded;
-        private bool traveling;
 
         public string TypeOfPassenger
         {
-            get { return typeOfPassenger; }
+            get
+            {
+                if (typeOfPassenger == null)
+                {
+                    throw new InvalidOperationException("Type of passenger is not set.");
+                    // Or return a default value
+                    // return "";
+                }
+                return typeOfPassenger;
+            }
             set
             {
                 if (value != "A" && value != "B")
@@ -89,8 +96,6 @@ namespace GelberAssignment.Classes
             Destination = destination;
             Origin = origin;
             CurrentPosition = origin;
-            Boarded = false;
-            Traveling = false;
         }
     }
 }
