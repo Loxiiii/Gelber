@@ -119,7 +119,7 @@ internal class Program
 
         foreach (Passenger newPassenger in newPassengers)
         {
-            newPassenger.Exists = true;
+            //newPassenger.Exists = true;
             newPassenger.CurrentPosition = newPassenger.Origin;
             railway.PassengersInRailway.Add(newPassenger);
         }

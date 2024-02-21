@@ -8,7 +8,6 @@ namespace GelberAssignment.Classes
         public int TimeArrives { get; set; }
         public int Destination { get; set; }
         public int Origin { get; set; }
-        public bool Exists { get; set; }
         public int CurrentPosition { get; set; }
         public bool Boarded { get; set; }
         public bool Traveling { get; set; }
@@ -20,7 +19,6 @@ namespace GelberAssignment.Classes
             TimeArrives = timeArrives;
             Destination = destination;
             Origin = origin;
-            Exists = false;
             CurrentPosition = origin;
             Boarded = false;
             Traveling = false;
