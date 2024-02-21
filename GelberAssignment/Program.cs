@@ -54,14 +54,14 @@ internal class Program
             {
                 foreach(Train train in rw.Trains)
                 { 
-                    train.moveTrainAndPassengers(t, ref rw);
+                    train.MoveTrainAndPassengers(t, ref rw);
                 }
             }
 
             // Unboard passengers at destination
             foreach(Train train in rw.Trains)
             {
-                train.unboardPassengers(ref rw, ref numPassengers);
+                train.UnboardPassengers(ref rw, ref numPassengers);
             }
 
             // Remove trains
@@ -81,12 +81,12 @@ internal class Program
                 .Where(t => t.Traveling == false))
             {
                 // Check boardable passengers and order them by descending distance to destination
-                boardablePassengers = train.checkBoardablePassengers(rw);
+                boardablePassengers = train.CheckBoardablePassengers(rw);
 
                 foreach(Passenger passenger in boardablePassengers)
                 {
                     
-                    train.boardPassenger(passenger, rw);
+                    train.BoardPassenger(passenger, rw);
                     if (train.Passengers.Count() == rw.CapacityOfTrains)
                     {
                         break;
