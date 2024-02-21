@@ -7,13 +7,14 @@ namespace Helpers
     {
         public string getContent(string fileName)
         {
-            // Get the current working directory
-            string currentDirectory = Directory.GetCurrentDirectory();
-            Console.WriteLine("The current directory is {0}", currentDirectory);
-            string navigateBack = "../../../";
-        
-            // Construct the file path relative to the parent directory
-            string filePath = Path.Combine(currentDirectory, navigateBack, "Examples", fileName + ".txt");
+            // Get the directory where the executable is located
+            string executableDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Navigate to the project root directory by going up three directories
+            string projectRootDirectory = Path.Combine(executableDirectory, "../../../../");
+
+            // Construct the file path relative to the project root directory
+            string filePath = Path.Combine(projectRootDirectory, "GelberAssignment", "Examples", fileName + ".txt");
 
             try
             {
